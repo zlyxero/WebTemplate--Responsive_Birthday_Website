@@ -1,0 +1,241 @@
+ /*------------------------------------------------
+ 					GENERAL
+--------------------------------------------------*/
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	
+	font: normal 18px 'EB Garamond', serif;
+	color: #fff;
+}
+
+h1, h2{
+	font-family: 'Great Vibes', cursive;
+	font-weight: 400;
+
+}
+
+h1{
+	font-size: 80px;
+}
+
+h2{
+	font-size: 60px;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+
+	opacity: 0.9;
+}
+
+a:hover{
+	opacity: 1;
+}
+
+a.btn{
+	color: #fff;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-weight: 800;
+	text-align: center;
+
+	background: #ff758c;
+	background: -webkit-linear-gradient(#F067AE, #ff7eb3);
+	background: -moz-linear-gradient(#F067AE, #ff7eb3);
+	background: linear-gradient(#F067AE, #ff7eb3);
+}
+
+.gold{
+	color: gold;
+}
+
+.pink{
+	color: #F067AE;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 125px 100px;
+
+}
+
+@media(max-width: 1000px){
+	section{
+		padding: 100px 50px;
+	}
+}
+
+@media(max-width: 600px){
+	section{
+		padding: 80px 15px;
+	}
+}
+
+
+/*------------------------------------------------
+ 					banner
+--------------------------------------------------*/
+
+
+.banner{
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(240, 102, 174, 0.4); 
+	color: #fff;
+	border-bottom: 1px dashed gold;
+}
+
+.banner h2{
+	font-size: 50px;
+}
+
+.cake_icon{
+	display: block;
+	font-size: 2rem;
+	padding: 10px 40px 0px;
+	color: #fff;
+	z-index: 100;
+}
+
+@media (max-width: 500px){
+	.cake_icon{
+		padding: 5px 5px 0px;
+
+	}
+
+	.banner h2{
+		font-size: 2rem;
+	}
+}
+
+
+ /*------------------------------------------------
+ 					LANDPAGE COVER SECTION
+--------------------------------------------------*/
+
+
+.landpage-cover{
+	position: relative;	
+	min-height: 100vh;
+	justify-content: center;
+	color: inherit;
+	text-align: center;
+}
+
+.background-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/birthday_cake2.jpg);
+	background-size: cover;
+	background-position: center 35%;
+	z-index: -1;
+}
+
+.background-image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #41414f;
+	opacity: 0.65;
+}
+
+
+.landpage-cover h1{
+	margin-bottom: 10px;
+}
+
+.landpage-cover h2{
+	margin-bottom: 20px;
+	font-family: cursive;
+
+}
+
+.heart_icon{
+	font-size: 25px;
+	margin-bottom: 40px;
+}
+
+.landpage-cover a.btn{
+	padding: 20px 46px;
+}
+
+.smile_icon{
+	padding-left: 5px;
+}
+
+
+@media (max-width: 600px){
+
+	.landpage-cover h1{
+		font-size: 60px;
+		line-height: 1.5;
+	}
+
+	.landpage-cover h2{
+		font-size: 50px;
+	}
+
+	.landpage-cover a.btn{
+		padding: 15px 20px;
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 400px){
+
+	.landpage-cover h1{
+		font-size: 40px;
+	}
+
+	.landpage-cover h2{
+		font-size: 35px;
+	}
+}
+
+/* fix display on mobile when in landscape mode*/
+
+@media (max-width: 400px) and (max-height: 600px){
+
+	.landpage-cover h1{
+		margin-bottom: 0px;
+	}
+
+	.landpage-cover h2{
+		font-size: 40px;
+	}
+}
+
+
+@media (max-width: 280px){
+	
+	.landpage-cover h1{
+		font-size: 35px;
+	}
+
+	.landpage-cover h2{
+		font-size: 30px;
+	}
+}
+
+

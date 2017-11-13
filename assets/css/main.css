@@ -1,0 +1,888 @@
+
+/*------------------------------------------------
+ 					GENERAL
+--------------------------------------------------*/
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+}
+
+html{
+	font: normal 'EB Garamond', serif;
+	color: #555;
+	font-size: 18px;
+	line-height: 1.42857143;
+}
+
+h1, h2, h3 {
+	font-family: 'Great Vibes', cursive;
+	font-weight: 400;
+}
+
+h1{
+	font-size: 3.5rem;
+}
+
+h2{
+	font-size: 2.5rem;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding: 125px 100px;
+}
+
+section p{
+	line-height: 1.8;
+}
+
+@media (max-width: 1000px){
+
+	section{
+		padding: 100px 50px;
+	}
+}
+
+@media (max-width: 800px){
+	section{
+		padding: 80px 30px;
+	}
+
+	section p{
+	text-align: justify;
+	}
+
+}
+
+a{
+	text-decoration: none;
+	color: inherit; 
+	cursor: pointer;
+}
+
+.icon_area{
+	padding: 80px 0px 10px;
+	text-align: center;
+
+	background: #f7f7f7;
+	background: -webkit-linear-gradient(#ebedee, #fdfbfb);
+	background: -moz-linear-gradient(#ebedee, #fdfbfb);
+	background: linear-gradient(#ebedee, #fdfbfb);
+}
+
+.icon{
+	/* display as inline-block to allow for setting any margin(s)*/
+	display: inline-block;
+	font-size: 50px;
+    margin-bottom: 25px;
+    color: rgb(240, 102, 174);
+}
+
+.quote_icon{
+	font-size: 18px;
+	color: rgb(240, 102, 174);
+	padding: 3px;
+}
+
+.button{
+	color: #fff;
+	background: #ff758c;
+	background: -webkit-linear-gradient(#ff758c, #ff7eb3);
+	background: -moz-linear-gradient(#ff758c, #ff7eb3);
+	background: linear-gradient(#ff758c, #ff7eb3);
+	border-radius: 20px;
+	border-style: double;
+}
+
+.button:hover{
+	background: #ff758c;
+	background: -webkit-linear-gradient(#89f7fe, #66a6ff);
+	background: -moz-linear-gradient(#89f7fe, #66a6ff);
+	background: linear-gradient(#89f7fe, #66a6ff);
+}
+
+
+/* image_container contains image  banners for each section*/
+
+.image_container{
+
+	/* provide a height so that the background image doesnt stretch out of its container*/
+	height: 70vh;
+	position: relative;
+
+}
+
+.image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-size: cover;
+	background-color: #41414f;
+	z-index: -2;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 70vh;
+	text-align: center;
+	line-height: 1.7;
+}
+
+.image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black; 
+	opacity: 0.45;
+	z-index: -1;
+}
+
+.image h3{
+	color: #fff;
+	margin: 20%; 
+	padding: 60px;
+	font-family: 'Open Sans', sans-serif;
+
+	border: 4px solid white;
+
+}
+
+
+@media (max-width: 800px){
+	
+	.image h3{
+		padding: 15px 20px;
+	}
+}
+
+@media (max-width: 600px){
+	
+	.image h3{
+		margin: 0 10px;
+	}
+}
+
+.text{
+	margin-bottom: 80px;
+}
+
+.text a{
+	text-decoration: underline;
+	font-weight: bold;
+	color: #F067AE;
+}
+
+@media (min-width: 800px){
+	.text p{
+		text-align: center;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 16px;
+		color: #555;
+
+	}
+}
+
+.pink{
+	color: #F067AE;
+}
+
+.gold{
+	color: gold;
+}
+
+
+/*------------------------------------------------
+ 					HEADER SECTION
+--------------------------------------------------*/
+
+.banner{
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(240, 102, 174, 0.4); 
+	color: #fff;
+	border-bottom: 1px dashed gold;
+}
+
+.icon.cake_icon{
+	display: block;
+	margin: 0;
+	font-size: 35px;
+	padding: 10px 40px 0px;
+
+	/* overide the color set for all icons*/
+	color: #fff;
+
+}
+
+@media (max-width: 500px){
+	.icon.cake_icon{
+		padding: 10px 5px 0px;
+
+	}
+}
+
+
+.holder{
+	margin-top: 0;
+	height: 90vh;
+	position: absolute;
+}
+
+.holder .circle{
+	position: absolute;
+	display: block;
+	height: 16px;
+	width: 16px;
+	border: 3px solid gold;
+	padding: 10px;
+	z-index: 2;
+	background-color: #F067AE;
+	border-radius: 50%;
+}
+
+.holder .circle.top{
+	top: 65px;
+	left: 205px;
+
+}
+
+.holder .circle.bottom{
+	top: 350px; 
+	left: 205px;
+}
+
+.divide_line{
+	position: absolute;
+	top:90px;
+	left: 217px;
+	height: 264px;
+	border: 1px dashed #F067AE;
+	display: initial;
+	z-index: 3;
+}
+
+.widescreen_cover{
+	position: absolute;
+	z-index: 1;
+	top: 300px;
+	left: 5px;
+	padding: 200px;
+	background-image: url(../images/main_cover.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 100%;
+}
+
+
+.header-cover{
+	position: relative;	
+	min-height: 100vh;
+}
+
+.header-cover .background-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/birthday_cake2.jpg);
+	background-size: cover;
+	background-position: center 35%;
+	border-bottom: 2px solid #f4d322;
+	z-index: -1;
+}
+
+.header-cover .background-image:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #41414f;
+	opacity: 0.3;
+}
+
+.scroll_icon{
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	font-size: 14px;
+}
+
+@media (min-width: 601px) and (max-width: 800px){
+	.header-cover .background-image{
+		background-size: contain;
+	}
+}
+
+/*media query for mobile phones in landscape mode*/
+@media (min-width: 601px) and (max-width: 800px) and (max-height: 400px){
+	.header-cover .background-image{
+		background-size: cover;
+		background-position: center;
+	}
+
+	.holder{
+		display: none;
+	}
+
+	.widescreen_cover{
+		padding: 100px;
+	}
+}
+
+
+@media (max-width: 600px){
+	.header-cover .background-image{
+		background-image: url(../images/main_cover.jpg);
+		background-position: center top;
+	}
+
+	.holder, .widescreen_cover{
+		display: none;
+	}
+
+	.header-cover .background-image:after{
+		opacity: 0.45;
+	}
+
+	/* display scroll icon in mobile devices*/
+	.scroll_icon{
+		display: initial;
+	}
+}
+
+/*------------------------------------------------
+ 					NOTE SECTION
+--------------------------------------------------*/
+
+.icon_area.top{
+	padding-top: 120px;
+}
+
+.note{
+	background: #f7f7f7;
+	background: -webkit-linear-gradient(#ebedee, #fdfbfb);
+	background: -moz-linear-gradient(#ebedee, #fdfbfb);
+	background: linear-gradient(#ebedee, #fdfbfb);
+}
+
+.note h2{
+	margin-bottom: 15px;
+}
+
+.note p{
+	max-width: 80%;
+	text-align: center;
+	font-size: 20px;
+}
+
+@media (min-width: 1000px){
+	.note p{
+		font-family: sans-serif;
+	}
+}
+
+@media (max-width: 800px){
+	
+	.note {
+		padding: 40px 15px;
+		background-color: rgb(21, 25, 28);
+		background: rgb(21, 25, 28);
+		color: #fff;
+	}
+
+	.note p{
+		font-size: 18px;
+		text-align: justify; 
+		max-width: 100%;
+		padding-bottom: 40px;
+	}
+
+	.center{
+		display: block;
+		text-align: center;
+		padding-top: 5px; 
+	}
+
+	.br{
+		display: none;
+	}
+}
+
+/*------------------------------------------------
+ 					BOOK SECTION
+--------------------------------------------------*/
+
+.books{
+	background-image: url(../images/book3.jpg);
+}
+
+
+@media (max-width: 600px){
+	.books{
+		background-image: url(../images/book1.jpg);
+		background-position: center; 
+	}
+
+	.books.image:after{
+		opacity: 0.7;
+	}
+}
+
+/*books container*/
+
+
+.books_container .text{
+	text-align: justify;
+}
+
+.downloads{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.downloads .downloads_outline{
+	display: flex;
+	height: 300px;
+	width: 33vw;
+	margin: 15px;
+}
+
+.downloads_outline .downloads_cover{
+	min-width: 50%;
+	background: #ffd56c;
+	background: -webkit-linear-gradient(#ebedee, #fdfbfb);
+	background: -moz-linear-gradient(#ebedee, #fdfbfb);
+	background: linear-gradient(#ebedee, #fdfbfb);
+	background-position: center;
+	background-size: cover;
+}
+
+.downloads_outline .downloads_cover.one{
+	background-image: url(../images/books_cover/origin.jpg);
+}
+
+.downloads_outline .downloads_cover.two{
+	background-image: url(../images/books_cover/harlan.jpg);
+}
+
+.downloads_outline .downloads_cover.three{
+	background-image: url(../images/books_cover/kite_runner_graphic.jpg);
+}
+
+.downloads_outline .downloads_cover.four{
+	background-image: url(../images/books_cover/sons_and_soldiers.jpg);
+}
+
+.downloads_outline .downloads_title{
+	/*positioned to be the reference point for its absoulutely positioned child element(s)*/
+	position: relative; 
+	background-color: #f7f7f7;
+	width: 50%;
+	padding: 15px;
+
+	background: #ebedee;
+	background: -webkit-linear-gradient(#ebedee, #fdfbfb);
+	background: -moz-linear-gradient(#ebedee, #fdfbfb);
+	background: linear-gradient(#ebedee, #fdfbfb);
+}
+
+.downloads_title h2, h3, h4{
+	margin-bottom: 10px;
+}
+
+.downloads_title h2{
+	font: bold 1.5rem 'EB Garamond', serif;
+}
+
+.downloads_title h3{
+	color: #F067AE;
+
+}
+
+.downloads_title h4{
+	font-weight: normal;
+}
+
+.downloads_title p{
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+	padding: 5px 15px;
+}
+
+.download_icon{
+	font-size: 1.2rem;
+	color: #fff;
+}
+
+.downloads_title h4 a{
+	border-bottom: 2px solid #F067AE;
+}
+
+.books_container .extras{
+
+	/* add some margin to separate it from  download_outline */
+	margin-top: 30px; 
+	padding: 10px 25px;
+	font-size: 1.2rem;
+}
+
+
+@media (max-width: 1000px){
+	.downloads .downloads_outline{
+		width: 40vw;
+	}
+}
+
+@media (max-width: 950px){
+
+	.downloads{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.downloads .downloads_outline{
+		width: 50vw;
+		min-height: 200px;
+	}
+
+	.books_container .text p{
+		margin-bottom: 10px;
+	}
+
+}
+
+@media (min-width:601px) and (max-width: 750px){
+
+	.downloads .downloads_outline{
+		width: 60vw;
+	}
+}
+
+
+@media (max-width: 600px){
+
+	.downloads{
+		width: 90vw;	
+	}
+
+	.downloads .downloads_outline{
+		width: 85vw;
+	}
+
+	.downloads_outline .downloads_cover{
+
+		background: linear-gradient(#ebedee, #fdfbfb);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: top;
+	}
+
+	.books_container .extras{
+	padding: 10px 20px;
+	font-size: 1rem;
+}
+
+}
+
+@media (max-width: 500px){
+
+	/*reduce the height of the books for mobile design*/
+	
+	.downloads .downloads_outline{
+		height: 250px;
+	}
+
+	.downloads_title p{
+		bottom: 1rem;
+		left: 1rem;
+		padding: 5px 15px;
+	}
+
+	.download_icon{
+		font-size: 0.9rem;
+
+	}
+
+}
+
+@media (max-width: 400px){
+	
+	.downloads .downloads_outline{
+		height: 250px;
+	}	
+	
+	.downloads_title h2, h3, h4{
+		font-size: 18px;
+	}
+
+	.downloads_title p{
+		margin-top: 30px;
+		padding: 5px 15px;
+		text-align: center;
+	}
+}
+
+@media (max-width: 370px){
+	
+	.downloads_title p{
+		position: static;
+		padding: 2px 10px;
+		
+	}
+
+	.download_icon{
+		font-size: 0.7rem;
+
+	}
+
+}
+
+/*------------------------------------------------
+ 					PLAYLIST SECTION
+--------------------------------------------------*/
+
+
+.playlist_image{
+	background-image: url(../images/playlist_wide.jpg);
+	background-position: center;
+}
+
+/* 'changes the background image on mobile devices.'
+
+@media (max-width: 800px){
+	.playlist_image{
+	background-image: url(../images/playlist.jpg);
+	background-position: center;
+	}
+
+	.playlist_image.image:after{
+		opacity: 0.55;
+	}
+}
+*/
+
+
+/* media queries to make the iframe responsive */
+
+@media (max-width: 1300px){
+	.playlist iframe{
+		width: 560px;
+		height: 315px;
+	}
+}
+
+@media (max-width: 800px){
+	.playlist iframe{
+		width: 90vw;
+		height: 300; 
+}	
+	.playlist{
+		background-color: rgb(21, 25, 28);
+	}
+
+	.playlist .text{
+		color: #fff;
+	}
+
+	.youtube_icon_white{
+		display: initial;
+	}
+
+	.youtube_icon_black{
+		display: none;
+	}
+
+}
+
+@media(min-width: 801px){
+	.youtube_icon_white{
+		display: none;
+	}
+
+	.youtube_icon_black{
+		display: initial;
+	}
+}
+
+
+/*------------------------------------------------
+ 					GALLERY SECTION
+--------------------------------------------------*/
+
+
+.gallery{
+	margin-bottom: 100px;
+}
+
+.gallery_image{
+	background-image: url(../images/gallery_desktop.jpg);
+	background-position: center center;
+}
+
+@media(max-width: 800px){
+	.gallery_image{
+		background-image: url(../images/gallery_mobile.jpg);
+	}
+
+} 
+
+.slider-container{			
+  height: 70vh;
+  width: 80%;
+  position: relative;
+  overflow: hidden; 
+  text-align: center;
+}
+
+
+.menu {
+  position: absolute;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  bottom: 0;
+}
+
+.menu label {
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50px;
+  margin: 0 .2em 1em;
+  background: #F067AE;
+  }
+
+ .menu label:hover {
+    background: white;
+  }
+
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  padding: 8em 1em 0;
+  background-size: cover;
+  transition: left 0s .85s;
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left .65s ease-out;
+}
+
+.slide-1 {
+  background-image: url(../images/slide1_large.jpg);
+}
+.slide-2 {
+  background-image: url(../images/slide2_large.jpg);
+}
+.slide-3 {
+  background-image: url(../images/slide3_large.jpg);
+}
+
+.slide-4 {
+  background-image: url(../images/fish_large.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+@media (max-width: 800px){
+
+	.slider-container{
+		height: 80vh;
+		width: 50vw;
+	}
+
+	.slide-1, .slide-2, .slide-3{
+		background-position: center;
+	}
+
+	.slide-1 {
+  		background-image: url(../images/slide1.jpg);
+
+	}
+	.slide-4 {
+	  background-image: url(../images/fish.jpg);
+	  background-size: contain;
+  	  background-repeat: no-repeat;
+  	  background-position: top;
+	}
+	.slide-3 {
+	  background-image: url(../images/slide3.jpg);
+	}
+
+	.slide-2 {
+		background-image: url(../images/slide2.jpg);
+	}
+}
+
+@media (max-width: 500px){
+	.slider-container{
+		height: 80vh;
+		width: 80vw;
+	}
+}
+
+
+/*------------------------------------------------
+ 					FOOTER SECTION
+--------------------------------------------------*/
+
+footer{
+	
+	position: relative;
+	width: 100%;
+	height: 60vh;
+
+	background: #ebedee;
+	background: -webkit-linear-gradient(#868f96, #596164);
+	background: -moz-linear-gradient(#868f96, #596164);
+	background: linear-gradient(#868f96, #596164);
+
+}
+
+footer:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-image: url(../images/funny2.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: ;
+}
